@@ -2,6 +2,10 @@ body {
     background: black;
     margin: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .flowers {
@@ -17,19 +21,75 @@ body {
     --t-speed: 0.8s;
 }
 
-.flower-1 {
-    animation: moving-flower-1 4s linear infinite;
+/* Стебель */
+.flower__line {
+    width: 4px;
+    height: 100px;
+    background: green;
+    position: relative;
+    margin: auto;
 }
 
-.flower__line {
-    height: 70vh;
-    animation-delay: 0.3s;
+/* Листья */
+.flower__line__leaf {
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: green;
+    border-radius: 50%;
+    top: 20px;
 }
 
 .flower__line__leaf--1 {
-    animation: blooming-leaf-right var(--t-speed) ease-in-out infinite alternate;
+    left: -15px;
+    transform: rotate(-30deg);
 }
 
+.flower__line__leaf--2 {
+    right: -15px;
+    transform: rotate(30deg);
+}
+
+/* Лепестки */
+.flower__leafs {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower__leafs::before,
+.flower__leafs::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: purple;
+    border-radius: 50%;
+}
+
+.flower__leafs::before {
+    left: -15px;
+}
+
+.flower__leafs::after {
+    right: -15px;
+}
+
+/* Центр цветка */
+.flower__leafs::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+}
+
+/* Анимации */
 @keyframes moving-flower-1 {
     0%, 100% {
         transform: translateX(0);
@@ -46,4 +106,8 @@ body {
     100% {
         transform: scaleY(1);
     }
+}
+
+.flower-1 {
+    animation: moving-flower-1 4s linear infinite;
 }
