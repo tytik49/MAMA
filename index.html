@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Flowers with Sound</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="purple-flowers.css">
+    <title>Purple Flowers</title>
 </head>
-<body>
-    <div class="flower flower--1">
-        <div class="flower__leafs flower__leafs--1">
-            <div class="flower__leaf flower__leaf--1"></div>
-            <div class="flower__leaf flower__leaf--2"></div>
+<body class="not-loaded">
+    <div class="night"></div>
+    <div class="flowers">
+        <div class="flower flower-1">
+            <div class="flower__leafs"></div>
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--1"></div>
+            </div>
+        </div>
+        <div class="flower flower-2">
+            <div class="flower__leafs"></div>
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--2"></div>
+            </div>
+        </div>
+        <div class="flower flower-3">
+            <div class="flower__leafs"></div>
+            <div class="flower__line">
+                <div class="flower__line__leaf flower__line__leaf--3"></div>
+            </div>
         </div>
     </div>
-    <div class="flower flower--2">
-        <div class="flower__leafs flower__leafs--2">
-            <div class="flower__leaf flower__leaf--1"></div>
-            <div class="flower__leaf flower__leaf--2"></div>
-        </div>
-    </div>
-
-    <audio id="myAudio" autoplay>
-        <source src="Mama.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var audio = document.getElementById('myAudio');
-            audio.play();
-        });
-    </script>
 </body>
 </html>
